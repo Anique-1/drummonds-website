@@ -186,14 +186,6 @@ export function Footer() {
           <div className="text-muted-foreground text-xs sm:text-sm order-2 sm:order-1">
             © 2025 Drummonds. All rights reserved. | Professional Auditing & VAT Services in Bahrain
           </div>
-          <div className="flex flex-wrap gap-4 text-xs sm:text-sm order-1 sm:order-2">
-            <Link href="/privacy" className="text-muted-foreground hover:text-accent transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="text-muted-foreground hover:text-accent transition-colors">
-              Terms of Service
-            </Link>
-          </div>
         </div>
       </div>
     </footer>
