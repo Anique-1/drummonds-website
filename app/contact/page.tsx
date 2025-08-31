@@ -45,10 +45,49 @@ export default function ContactPage() {
     message: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission here
-    console.log("Form submitted:", formData)
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+    setErrorMsg(null);
+
+    try {
+      // Use backend URL from .env
+      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL
+      const res = await fetch(`${backendUrl}/submit`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          service: formData.service,
+          message: formData.message,
+        }),
+      });
+
+      const data = await res.json();
+      if (data.status === "success") {
+        setStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          service: "",
+          message: "",
+        });
+      } else {
+        setStatus("error");
+        setErrorMsg(data.message || "Failed to send message. Please try again.");
+      }
+    } catch (err: any) {
+      setStatus("error");
+      setErrorMsg(err.message || "Failed to send message. Please try again.");
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -266,10 +305,25 @@ export default function ContactPage() {
                       type="submit"
                       size="lg"
                       className="w-full h-10 sm:h-11 text-sm sm:text-base"
+                      disabled={status === "loading"}
                     >
-                      <Send className="mr-2 h-4 w-4" />
-                      Send Message
+                      {status === "loading" ? (
+                        <>
+                          <span className="animate-spin mr-2">&#9696;</span> Sending...
+                        </>
+                      ) : (
+                        <>
+                          <Send className="mr-2 h-4 w-4" />
+                          Send Message
+                        </>
+                      )}
                     </Button>
+                    {status === "success" && (
+                      <p className="text-green-600 text-sm mt-2">Your message was sent successfully!</p>
+                    )}
+                    {status === "error" && (
+                      <p className="text-red-600 text-sm mt-2">{errorMsg}</p>
+                    )}
                   </form>
                 </CardContent>
               </Card>
