@@ -24,36 +24,50 @@ export function Footer() {
               Leading provider of professional auditing, accounting, and VAT services in Bahrain. We help businesses
               achieve compliance and financial excellence.
             </p>
-            <div className="flex space-x-3">
-              <Button
-                variant="outline"
-                size="icon"
-                className="hover:bg-accent hover:text-accent-foreground bg-transparent transition-colors duration-200 h-9 w-9"
-              >
-                <Facebook className="h-4 w-4" />
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                className="hover:bg-accent hover:text-accent-foreground bg-transparent transition-colors duration-200 h-9 w-9"
-              >
-                <Twitter className="h-4 w-4" />
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                className="hover:bg-accent hover:text-accent-foreground bg-transparent transition-colors duration-200 h-9 w-9"
-              >
-                <Linkedin className="h-4 w-4" />
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                className="hover:bg-accent hover:text-accent-foreground bg-transparent transition-colors duration-200 h-9 w-9"
-              >
-                <Instagram className="h-4 w-4" />
-              </Button>
-            </div>
+<div className="flex space-x-3">
+  <a
+    href="https://www.facebook.com/profile.php?id=61579995238738"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook"
+  >
+    <Button
+      variant="outline"
+      size="icon"
+      className="hover:bg-accent hover:text-accent-foreground bg-transparent transition-colors duration-200 h-9 w-9"
+    >
+      <Facebook className="h-4 w-4" />
+    </Button>
+  </a>
+  <a
+    href="https://www.linkedin.com/in/abid-mehmood-204360277/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="LinkedIn"
+  >
+    <Button
+      variant="outline"
+      size="icon"
+      className="hover:bg-accent hover:text-accent-foreground bg-transparent transition-colors duration-200 h-9 w-9"
+    >
+      <Linkedin className="h-4 w-4" />
+    </Button>
+  </a>
+  <a
+    href="https://www.instagram.com/drummonds_international/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram"
+  >
+    <Button
+      variant="outline"
+      size="icon"
+      className="hover:bg-accent hover:text-accent-foreground bg-transparent transition-colors duration-200 h-9 w-9"
+    >
+      <Instagram className="h-4 w-4" />
+    </Button>
+  </a>
+</div>
           </div>
 
           {/* Quick Links */}

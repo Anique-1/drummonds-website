@@ -156,8 +156,8 @@ export default function AboutPage() {
             </div>
             <div className="space-y-6">
               <div>
-                <h3 className="text-2xl font-bold text-foreground mb-2">Managing Partner CA Finalist & GCIA</h3>
-                <p className="text-accent font-medium mb-4">Chartered Accountant & Business Advisor</p>
+                <h2 className="text-2xl font-bold text-foreground mb-2">Abid Mehmood</h2>
+                <p className="text-accent font-medium mb-4">Managing Partner CA Finalist & GCIA</p>
               </div>
               <div className="space-y-4 text-muted-foreground text-pretty">
                 <p>

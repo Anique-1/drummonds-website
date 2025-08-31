@@ -9,7 +9,7 @@ export default function TeamPage() {
   const teamMembers = [
     {
       name: "Abid Mehmood",
-      role: "Managing Partner CA Finalist & GCIA",
+      role: "CA Finalist & GCIA",
       experience: "30+ Years Experience",
       specialization: "Strategic Leadership & Financial Advisory",
       image:
@@ -19,7 +19,7 @@ export default function TeamPage() {
     },
     {
       name: "Hamid Mehmood",
-      role: "Chartered Accountant Finalist - MPA, MBA, APFA, CA",
+      role: "Chartered Accountant Finalist - MPA, MBA, APFA",
       experience: "25+ Years Experience",
       specialization: "Financial Auditing & Compliance",
       image:
